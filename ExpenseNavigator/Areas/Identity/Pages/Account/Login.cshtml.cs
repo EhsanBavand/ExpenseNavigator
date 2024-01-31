@@ -87,9 +87,9 @@ namespace ExpenseNavigator.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            if (!string.IsNullOrEmpty(ErrorMessage))
+            if (User.Identity.IsAuthenticated)
             {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
+                Response.Redirect("/");
             }
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
