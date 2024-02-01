@@ -3,18 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ExpenseNavigator</title>
+    <title> @ViewData["Title"] Expense Navigator</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ExpenseNavigator.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        
+    </style>
 
+    <!-- Other head elements -->
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-forestGreen border-bottom  box-shadow mb-3  color-gold">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ExpenseNavigator</a>
+                <a class="header-style navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    @* <img src="~/Img/icon-yellow-new.png" alt="Icon" width="10%" height="10%" style="margin-right:10px;" /> *@
+                     <img src="~/Img/icon-gray-new.png"   alt="Icon" width="10%" height="10%" style="margin-right:10px;" /> 
+                     @* <img src="~/Img/icon-gold-New.png"   alt="Icon" width="10%" height="10%" style="margin-right:10px;" />  *@
+                    Expense Navigator
+                </a> 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -33,7 +45,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - ExpenseNavigator - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Expense Navigator Team
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

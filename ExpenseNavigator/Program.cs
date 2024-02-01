@@ -9,6 +9,9 @@ builder.Services.AddDbContext<ExpenseNavigatorDbContext>(options => options.UseS
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ExpenseNavigatorDbContext>();
 
+// See the changes of the HTML File without stopping the project
+builder.Services.AddMvc().AddRazorRuntimeCompilation();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
