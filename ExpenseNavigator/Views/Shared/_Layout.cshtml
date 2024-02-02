@@ -10,36 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <style>
-        
+
     </style>
 
     <!-- Other head elements -->
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-forestGreen border-bottom  box-shadow mb-3  color-gold">
-            <div class="container-fluid">
-                <a class="header-style navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    @* <img src="~/Img/icon-yellow-new.png" alt="Icon" width="10%" height="10%" style="margin-right:10px;" /> *@
-                     <img src="~/Img/icon-gray-new.png"   alt="Icon" width="10%" height="10%" style="margin-right:10px;" /> 
-                     @* <img src="~/Img/icon-gold-New.png"   alt="Icon" width="10%" height="10%" style="margin-right:10px;" />  *@
-                    Expense Navigator
-                </a> 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial.cshtml" />
+        <div class="row col-lg-12 p-0 m-0">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 p-0">
+                <div class="container-fluid m-0 p-0 ">
+                    <div class="p-0 m-0 navbar-collapse collapse">
+                        <img src="~/Img/icon-gold-new.png" alt="Icon" class="logo-img" style="opacity:0.5 "/>
+                        <a class="header-style navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Expense Navigator</a>
+                        <a class="header-style navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Contact Us</a>
+                        <a class="header-style navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Help</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="col-lg-2 p-0 m-0">
+                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse header-style">
+                            <partial name="_LoginPartial.cshtml" />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody() 
+            @RenderBody()
         </main>
     </div>
 
