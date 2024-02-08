@@ -120,6 +120,10 @@ namespace ExpenseNavigator.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                    // Add for new Layout
+                    HttpContext.Response.Cookies.Append("Layout", "_LayoutProject", new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) });
+                    
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
