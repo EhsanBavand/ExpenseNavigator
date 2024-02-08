@@ -23,26 +23,7 @@ html, body {
     font-family: Roboto, sans-serif;
 }
 
-body {
-    min-height: 100vh;
-    position: relative;
-    background: url('/Img/img-1.jpg') center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-    body::before {
-        content: "";
-        min-height: 100vh;
-        position: absolute;
-        opacity: 0.5 !important;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value for opacity */
-        z-index: -1;
-    }
 
 
 
