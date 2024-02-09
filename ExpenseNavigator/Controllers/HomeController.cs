@@ -18,7 +18,17 @@ namespace ExpenseNavigator.Controllers
 
         public IActionResult Index()
         {
-            //ViewData["UserID"] = _userManager.GetUserId(this.User);
+            var userId = _userManager.GetUserId(this.User);
+            if (userId != null)
+            {
+                var user = _userManager.Users.FirstOrDefault(u => u.Id == userId);
+
+                if (user != null)
+                {
+                    ViewData["UserID"] = userId;
+                    ViewBag.FirstName = user.FirstName;
+                }
+            }
             return View();
         }
 

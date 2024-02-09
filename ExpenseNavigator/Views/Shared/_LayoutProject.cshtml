@@ -1,68 +1,153 @@
-﻿<!DOCTYPE html>
-<style>
-    body{
-        background: darkgray;
-    }
-</style>
-<html>
-<head>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
+﻿
 
-    <!-- Other head elements -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> @ViewData["Title"] Expense Navigator</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ExpenseNavigator.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                Dashboard
+    <header>
+        <div class="row col-lg-12 p-0 m-0">
+            <div class="container-fluid">
+                <div class="row flex-nowrap">
+                    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                                <span class="fs-5 d-none d-sm-inline">Menu</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Link 1
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Link 2
-                            </a>
-                        </li>
-                        <!-- Add more sidebar items as needed -->
-                    </ul>
-                </div>
-            </nav>
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link align-middle px-0">
+                                        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#submenu1" class="nav-link px-0 align-middle dropdown-toggle " data-bs-toggle="collapse" aria-expanded="false">
+                                        <i class="fs-4 bi-speedometer2 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                                    </a>
+                                    <ul class="collapse nav flex-column ms-1 nav-link" id="submenu1" data-bs-parent="#menu">
+                                        <li class="w-100">
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                        <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span>
+                                    </a>
+                                    <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                        <li class="w-100">
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span>
+                                    </a>
+                                    <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                        <li class="w-100">
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="dropdown pb-4">
+                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @* <img src="" alt="hugenerd" width="30" height="30" class="rounded-circle"> *@
+                                    <i class="bi-person-circle h2"></i>
+                                    <span class="d-none d-sm-inline mx-1">@ViewBag.FirstName</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    @*   <li class="nav-item">
+                                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                    <button id="logout" type="submit" class="nav-link btn btn-link border-0 me-1 p-2 rounded-1 text-danger">Logout</button>
+                                    </form>
+                                    </li> *@
+                                    <li class="nav-item">
+                                        <a class="btn btn-outline-primary ml-3 nav-link btn btn-link border-0 me-1 p-2 rounded-1 text-danger"> @Html.Partial("_LoginPartial.cshtml")</a>
+                                    </li>
 
-            <div class="col-lg-2 p-0 m-0" style="border:1px solid red;">
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse header-style">
-                    <partial name="_LoginPartial.cshtml" />
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-3">
+                        <h3>Left Sidebar with Submenus</h3>
+                        <p class="lead">
+                            An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single
+                            menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- Main content area -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <!-- Page content goes here -->
-                @RenderBody()
-            </main>
+
+            @*  <div class="col-lg-2 p-0 m-0">
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse header-style">
+            <partial name="_LoginPartial.cshtml" />
+            </div>
+            </div> *@
         </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
 
-    <!-- Include Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Expense Navigator Team
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

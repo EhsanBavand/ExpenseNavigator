@@ -1,13 +1,13 @@
 ﻿
-@{
+@* @{
     Layout = "_Layout";
-}
+} *@
 
-@* 
+
 @{
     var layout = Context.Request.Cookies["Layout"] ?? "_Layout";
 }
 
 @{
     Layout = layout;
-} *@
+}
