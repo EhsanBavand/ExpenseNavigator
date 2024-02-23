@@ -123,6 +123,7 @@ namespace ExpenseNavigator.Areas.Identity.Pages.Account
 
                     // Add for new Layout
                     HttpContext.Response.Cookies.Append("Layout", "_LayoutProject", new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) });
+                    //HttpContext.Response.Cookies.Append("Layout", "_Layout", new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) });
                     
                     return LocalRedirect(returnUrl);
                 }
